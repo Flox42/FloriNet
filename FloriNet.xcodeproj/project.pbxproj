@@ -1,0 +1,296 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		54CDE59D1D66172D00EA46DB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54CDE59C1D66172D00EA46DB /* AppDelegate.swift */; };
+		54CDE59F1D66172D00EA46DB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54CDE59E1D66172D00EA46DB /* ViewController.swift */; };
+		54CDE5A21D66172D00EA46DB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54CDE5A01D66172D00EA46DB /* Main.storyboard */; };
+		54CDE5A41D66172D00EA46DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 54CDE5A31D66172D00EA46DB /* Assets.xcassets */; };
+		54CDE5A71D66172D00EA46DB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54CDE5A51D66172D00EA46DB /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		54CDE5991D66172D00EA46DB /* FloriNet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FloriNet.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		54CDE59C1D66172D00EA46DB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		54CDE59E1D66172D00EA46DB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		54CDE5A11D66172D00EA46DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		54CDE5A31D66172D00EA46DB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		54CDE5A61D66172D00EA46DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		54CDE5A81D66172D00EA46DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		54CDE5961D66172D00EA46DB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		54CDE5901D66172C00EA46DB = {
+			isa = PBXGroup;
+			children = (
+				54CDE59B1D66172D00EA46DB /* FloriNet */,
+				54CDE59A1D66172D00EA46DB /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		54CDE59A1D66172D00EA46DB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				54CDE5991D66172D00EA46DB /* FloriNet.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		54CDE59B1D66172D00EA46DB /* FloriNet */ = {
+			isa = PBXGroup;
+			children = (
+				54CDE59C1D66172D00EA46DB /* AppDelegate.swift */,
+				54CDE59E1D66172D00EA46DB /* ViewController.swift */,
+				54CDE5A01D66172D00EA46DB /* Main.storyboard */,
+				54CDE5A31D66172D00EA46DB /* Assets.xcassets */,
+				54CDE5A51D66172D00EA46DB /* LaunchScreen.storyboard */,
+				54CDE5A81D66172D00EA46DB /* Info.plist */,
+			);
+			path = FloriNet;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		54CDE5981D66172D00EA46DB /* FloriNet */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 54CDE5AB1D66172D00EA46DB /* Build configuration list for PBXNativeTarget "FloriNet" */;
+			buildPhases = (
+				54CDE5951D66172D00EA46DB /* Sources */,
+				54CDE5961D66172D00EA46DB /* Frameworks */,
+				54CDE5971D66172D00EA46DB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FloriNet;
+			productName = FloriNet;
+			productReference = 54CDE5991D66172D00EA46DB /* FloriNet.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		54CDE5911D66172C00EA46DB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Florian Poncelin";
+				TargetAttributes = {
+					54CDE5981D66172D00EA46DB = {
+						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = N64D7CJF29;
+					};
+				};
+			};
+			buildConfigurationList = 54CDE5941D66172C00EA46DB /* Build configuration list for PBXProject "FloriNet" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 54CDE5901D66172C00EA46DB;
+			productRefGroup = 54CDE59A1D66172D00EA46DB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				54CDE5981D66172D00EA46DB /* FloriNet */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		54CDE5971D66172D00EA46DB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				54CDE5A71D66172D00EA46DB /* LaunchScreen.storyboard in Resources */,
+				54CDE5A41D66172D00EA46DB /* Assets.xcassets in Resources */,
+				54CDE5A21D66172D00EA46DB /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		54CDE5951D66172D00EA46DB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				54CDE59F1D66172D00EA46DB /* ViewController.swift in Sources */,
+				54CDE59D1D66172D00EA46DB /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		54CDE5A01D66172D00EA46DB /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				54CDE5A11D66172D00EA46DB /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		54CDE5A51D66172D00EA46DB /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				54CDE5A61D66172D00EA46DB /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		54CDE5A91D66172D00EA46DB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		54CDE5AA1D66172D00EA46DB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		54CDE5AC1D66172D00EA46DB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = FloriNet/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.florianponcelin.FloriNet;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		54CDE5AD1D66172D00EA46DB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = FloriNet/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.florianponcelin.FloriNet;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		54CDE5941D66172C00EA46DB /* Build configuration list for PBXProject "FloriNet" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				54CDE5A91D66172D00EA46DB /* Debug */,
+				54CDE5AA1D66172D00EA46DB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		54CDE5AB1D66172D00EA46DB /* Build configuration list for PBXNativeTarget "FloriNet" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				54CDE5AC1D66172D00EA46DB /* Debug */,
+				54CDE5AD1D66172D00EA46DB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 54CDE5911D66172C00EA46DB /* Project object */;
+}
