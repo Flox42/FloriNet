@@ -20,9 +20,14 @@
 		54CDE5BE1D67141900EA46DB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54CDE5BD1D67141900EA46DB /* Constants.swift */; };
 		54CDE5C01D67184700EA46DB /* MaterialButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54CDE5BF1D67184700EA46DB /* MaterialButton.swift */; };
 		54CDE5C21D6720D700EA46DB /* MaterialTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54CDE5C11D6720D700EA46DB /* MaterialTextField.swift */; };
+		54CDE5C71D6728C700EA46DB /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54CDE5C41D6728C700EA46DB /* Bolts.framework */; };
+		54CDE5C81D6728C700EA46DB /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54CDE5C51D6728C700EA46DB /* FBSDKCoreKit.framework */; };
+		54CDE5C91D6728C700EA46DB /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54CDE5C61D6728C700EA46DB /* FBSDKLoginKit.framework */; };
+		D5CB54B996C08CE83FBD12F7 /* Pods_FloriNet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D32E423D0D4DEB9E5820D1F3 /* Pods_FloriNet.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		306147C01898975E10BCFB6C /* Pods-FloriNet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FloriNet.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FloriNet/Pods-FloriNet.debug.xcconfig"; sourceTree = "<group>"; };
 		54CDE5991D66172D00EA46DB /* FloriNet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FloriNet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		54CDE59C1D66172D00EA46DB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		54CDE59E1D66172D00EA46DB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -38,6 +43,11 @@
 		54CDE5BD1D67141900EA46DB /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		54CDE5BF1D67184700EA46DB /* MaterialButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialButton.swift; sourceTree = "<group>"; };
 		54CDE5C11D6720D700EA46DB /* MaterialTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialTextField.swift; sourceTree = "<group>"; };
+		54CDE5C41D6728C700EA46DB /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		54CDE5C51D6728C700EA46DB /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		54CDE5C61D6728C700EA46DB /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		C59BE4FECCDD6B61969200A4 /* Pods-FloriNet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FloriNet.release.xcconfig"; path = "Pods/Target Support Files/Pods-FloriNet/Pods-FloriNet.release.xcconfig"; sourceTree = "<group>"; };
+		D32E423D0D4DEB9E5820D1F3 /* Pods_FloriNet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FloriNet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,17 +55,40 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				54CDE5C71D6728C700EA46DB /* Bolts.framework in Frameworks */,
+				54CDE5C81D6728C700EA46DB /* FBSDKCoreKit.framework in Frameworks */,
+				54CDE5C91D6728C700EA46DB /* FBSDKLoginKit.framework in Frameworks */,
+				D5CB54B996C08CE83FBD12F7 /* Pods_FloriNet.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		375521852C5BC647E4B96570 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				306147C01898975E10BCFB6C /* Pods-FloriNet.debug.xcconfig */,
+				C59BE4FECCDD6B61969200A4 /* Pods-FloriNet.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		4618B28C62DA1C604BB96F9F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D32E423D0D4DEB9E5820D1F3 /* Pods_FloriNet.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		54CDE5901D66172C00EA46DB = {
 			isa = PBXGroup;
 			children = (
 				54CDE59B1D66172D00EA46DB /* FloriNet */,
 				54CDE59A1D66172D00EA46DB /* Products */,
+				375521852C5BC647E4B96570 /* Pods */,
+				4618B28C62DA1C604BB96F9F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -70,6 +103,7 @@
 		54CDE59B1D66172D00EA46DB /* FloriNet */ = {
 			isa = PBXGroup;
 			children = (
+				54CDE5C31D6728AB00EA46DB /* Frameworks */,
 				54CDE5BC1D67140900EA46DB /* Util */,
 				54CDE5B11D66175200EA46DB /* Resources */,
 				54CDE5B01D66174D00EA46DB /* Model */,
@@ -128,6 +162,16 @@
 			name = Util;
 			sourceTree = "<group>";
 		};
+		54CDE5C31D6728AB00EA46DB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				54CDE5C41D6728C700EA46DB /* Bolts.framework */,
+				54CDE5C51D6728C700EA46DB /* FBSDKCoreKit.framework */,
+				54CDE5C61D6728C700EA46DB /* FBSDKLoginKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,9 +179,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 54CDE5AB1D66172D00EA46DB /* Build configuration list for PBXNativeTarget "FloriNet" */;
 			buildPhases = (
+				062884AC1476A001373ACAA6 /* [CP] Check Pods Manifest.lock */,
 				54CDE5951D66172D00EA46DB /* Sources */,
 				54CDE5961D66172D00EA46DB /* Frameworks */,
 				54CDE5971D66172D00EA46DB /* Resources */,
+				4CB8EB3F953C1086CA60E7E1 /* [CP] Embed Pods Frameworks */,
+				953AEE5F12FAB0267D074008 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -198,6 +245,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		062884AC1476A001373ACAA6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		4CB8EB3F953C1086CA60E7E1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FloriNet/Pods-FloriNet-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		953AEE5F12FAB0267D074008 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FloriNet/Pods-FloriNet-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		54CDE5951D66172D00EA46DB /* Sources */ = {
@@ -322,8 +417,13 @@
 		};
 		54CDE5AC1D66172D00EA46DB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 306147C01898975E10BCFB6C /* Pods-FloriNet.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/FloriNet",
+				);
 				INFOPLIST_FILE = FloriNet/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.florianponcelin.FloriNet;
@@ -333,8 +433,13 @@
 		};
 		54CDE5AD1D66172D00EA46DB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C59BE4FECCDD6B61969200A4 /* Pods-FloriNet.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/FloriNet",
+				);
 				INFOPLIST_FILE = FloriNet/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.florianponcelin.FloriNet;
@@ -361,6 +466,7 @@
 				54CDE5AD1D66172D00EA46DB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
