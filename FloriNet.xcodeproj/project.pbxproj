@@ -11,6 +11,7 @@
 		54B2B7AC1D6AF26D007593C9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 54B2B7AB1D6AF26D007593C9 /* GoogleService-Info.plist */; };
 		54B2B7AE1D6DE8B8007593C9 /* FeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B2B7AD1D6DE8B8007593C9 /* FeedVC.swift */; };
 		54B2B7B01D6DE96C007593C9 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B2B7AF1D6DE96C007593C9 /* PostCell.swift */; };
+		54B2B7B21D6F4521007593C9 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B2B7B11D6F4521007593C9 /* Post.swift */; };
 		54CDE59D1D66172D00EA46DB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54CDE59C1D66172D00EA46DB /* AppDelegate.swift */; };
 		54CDE59F1D66172D00EA46DB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54CDE59E1D66172D00EA46DB /* ViewController.swift */; };
 		54CDE5A21D66172D00EA46DB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54CDE5A01D66172D00EA46DB /* Main.storyboard */; };
@@ -36,6 +37,7 @@
 		54B2B7AB1D6AF26D007593C9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		54B2B7AD1D6DE8B8007593C9 /* FeedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedVC.swift; sourceTree = "<group>"; };
 		54B2B7AF1D6DE96C007593C9 /* PostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
+		54B2B7B11D6F4521007593C9 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		54CDE5991D66172D00EA46DB /* FloriNet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FloriNet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		54CDE59C1D66172D00EA46DB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		54CDE59E1D66172D00EA46DB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 		54CDE5B01D66174D00EA46DB /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				54B2B7B11D6F4521007593C9 /* Post.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -329,6 +332,7 @@
 				54CDE59D1D66172D00EA46DB /* AppDelegate.swift in Sources */,
 				54CDE5BE1D67141900EA46DB /* Constants.swift in Sources */,
 				54CDE5C01D67184700EA46DB /* MaterialButton.swift in Sources */,
+				54B2B7B21D6F4521007593C9 /* Post.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
