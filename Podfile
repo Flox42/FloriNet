@@ -7,5 +7,7 @@ target 'FloriNet' do
 
   # Pods for FloriNet
   pod 'Firebase/Core'
+  pod 'Firebase/Auth'
+  pod 'Firebase/Database'
 
 end
