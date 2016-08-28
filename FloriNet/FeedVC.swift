@@ -18,6 +18,7 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
     
     var imgPicker: UIImagePickerController!
     var posts = [Post]()
+    var currentUsername: String!
     var isImgSelected = false
     static var imgCache = NSCache()
 
@@ -31,6 +32,22 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
         imgPicker = UIImagePickerController()
         imgPicker.delegate = self
         
+        FIRAuth.auth()?.addAuthStateDidChangeListener({ (auth, user) in
+            if user != nil {
+                // User is signed in. Happy times!
+            } else {
+                self.dismissViewControllerAnimated(true, completion: nil)
+            }
+        })
+        
+        DataService.ds.userRef.child("\(FIRAuth.auth()?.currentUser?.uid)").observeSingleEventOfType(.Value, withBlock: { (snapshot) in
+            if let username = snapshot.value!["username"] as? String {
+                self.currentUsername = username
+            } else {
+                self.currentUsername = ""
+            }
+        })
+        
         DataService.ds.postRef.observeEventType(.Value, withBlock:  { (snapshot) in
             print(snapshot.value)
             
@@ -41,6 +58,7 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
                     
                     if let postDict = snap.value as? Dictionary<String, AnyObject> {
                         let key = snap.key
+                        
                         let post = Post(postKey: key, dictionary: postDict)
                         self.posts.append(post)
                     }
@@ -74,14 +92,20 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
         
         if let cell = tableView.dequeueReusableCellWithIdentifier("PostCell") as? PostCell {
             cell.request?.cancel()
+            cell.userImgRequest?.cancel()
             
             var img: UIImage?
+            var userImg: UIImage?
             
             if let url = post.postImgUrl {
                 img = FeedVC.imgCache.objectForKey(url) as? UIImage
             }
             
-            cell.configureCell(post, img: img)
+            if let userImgUrl = post.postUserImgUrl {
+                userImg = FeedVC.imgCache.objectForKey(userImgUrl) as? UIImage
+            }
+            
+            cell.configureCell(post, img: img, userImg: userImg)
             return cell
         } else {
             return PostCell()
@@ -96,9 +120,11 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
     
     
     func postToFirebase(imgUrl: String?) {
+        
         var post: Dictionary<String, AnyObject> = [
             "description": postField.text!,
-            "likes": 0
+            "likes": 0,
+            "userKey": DataService.ds.userID!
         ]
         
         if imgUrl != nil {

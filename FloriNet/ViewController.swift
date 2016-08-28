@@ -99,13 +99,5 @@ class ViewController: UIViewController {
             showErrorAlert("Email and password required", msg: "Please enter an email and password")
         }
     }
-
-    @IBAction func signOutBtnPressed(sender: AnyObject) {
-        do {
-            try FIRAuth.auth()?.signOut()
-        } catch {
-            print("Couldn't sign out")
-        }
-    }
 }
 

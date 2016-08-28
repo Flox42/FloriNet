@@ -20,4 +20,8 @@ class DataService {
     func createFirebaseUser(uid: String, user: Dictionary<String, String>) {
         userRef.child(uid).setValue(user)
     }
+    
+    func getPostUserInfo(postKey: String) {
+        
+    }
 }
