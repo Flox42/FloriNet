@@ -23,6 +23,16 @@ class ViewController: UIViewController {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
+        /*
+        FIRAuth.auth()?.addAuthStateDidChangeListener({ (auth, user) in
+            if user != nil {
+                self.performSegueWithIdentifier(SEGUE_LOGGED_IN, sender: nil)
+            }
+        })*/
+        userDidLogIn()
+    }
+    
+    func userDidLogIn() {
         if FIRAuth.auth()?.currentUser != nil {
             self.performSegueWithIdentifier(SEGUE_LOGGED_IN, sender: nil)
         }
@@ -52,16 +62,30 @@ class ViewController: UIViewController {
                         print("Can't connect to Firebase with Facebook login. Error: \(error)")
                     } else {
                         print("Connected to Firebase with Facebook login. User: \(user?.uid)")
-                        print(user?.providerID)
-                        print(user?.displayName)
                         
-                        let userDict = ["provider": "facebook"]
-                        DataService.ds.createFirebaseUser(user!.uid, user: userDict)
-
-                        self.performSegueWithIdentifier(SEGUE_LOGGED_IN, sender: nil)
+                        DataService.ds.userRef.child("\(user!.uid)").observeSingleEventOfType(.Value, withBlock: { (snapshot) in
+                            if snapshot.exists() {
+                                print("Facebook Snapshot: \(snapshot)")
+                                self.performSegueWithIdentifier(SEGUE_LOGGED_IN, sender: nil)
+                            } else {
+                                let accountInfo = ["userId": user!.uid, "provider": "facebook"]
+                                self.performSegueWithIdentifier(SEGUE_SIGN_UP, sender: accountInfo)
+                            }
+                        })
                     }
                 })
 
+            }
+        }
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == SEGUE_SIGN_UP {
+            if let signUpVC = segue.destinationViewController as? SignUpVC {
+                if let accountInfo = sender as? Dictionary<String, String> {
+                    signUpVC.accountDict = accountInfo
+                    signUpVC.homeViewController = self
+                }
             }
         }
     }
@@ -75,17 +99,8 @@ class ViewController: UIViewController {
                     print(error)
                     
                     if error?.code == STATUS_ACCOUNT_NONEXIST {
-                        FIRAuth.auth()?.createUserWithEmail(email, password: pwd, completion: { (user, error) in
-                            if error != nil {
-                                self.showErrorAlert("Could not create account", msg: "Problem creating account. Try something else")
-                            } else {
-                                FIRAuth.auth()?.signInWithEmail(email, password: pwd, completion: { (user, error) in
-                                    let userDict = ["provider": "password"]
-                                    DataService.ds.createFirebaseUser(user!.uid, user: userDict)
-                                })
-                                self.performSegueWithIdentifier(SEGUE_LOGGED_IN, sender: nil)
-                            }
-                        })
+                        let accountInfo = ["provider": "password", "email": email, "password": pwd]
+                        self.performSegueWithIdentifier(SEGUE_SIGN_UP, sender: accountInfo)
                     } else {
                         self.showErrorAlert("Could not log in", msg: "Please check your username and password")
                     }

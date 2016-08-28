@@ -46,6 +46,8 @@ class PostCell: UITableViewCell {
         DataService.ds.userRef.child("\(post.postUserKey)").observeSingleEventOfType(.Value, withBlock: { (snapshot) in
             if let username = snapshot.value!["username"] as? String {
                 self.usernameLbl.text = username
+            } else {
+                self.usernameLbl.text = "username"
             }
             
             if post.postUserImgUrl != nil {
@@ -62,6 +64,8 @@ class PostCell: UITableViewCell {
                     })
                 }
                 
+            } else {
+                self.profileImg.image = UIImage(named: "Kiwi")
             }
         })
         
@@ -90,7 +94,7 @@ class PostCell: UITableViewCell {
         
         likeRef.observeSingleEventOfType(.Value, withBlock:  { (snapshot) in
             
-            if let doesNotExist = snapshot.value as? NSNull {
+            if !snapshot.exists() {
                 //This means we have not liked this specific post
                 self.likeImg.image = UIImage(named: "heart-empty")
             } else {
@@ -103,7 +107,7 @@ class PostCell: UITableViewCell {
     func likeImgTapped(sender: UIGestureRecognizer) {
         likeRef.observeSingleEventOfType(.Value, withBlock:  { (snapshot) in
             
-            if let doesNotExist = snapshot.value as? NSNull {
+            if !snapshot.exists() {
                 self.likeImg.image = UIImage(named: "heart-full")
                 self.post.editLikes(true)
                 self.likeRef.setValue(true)

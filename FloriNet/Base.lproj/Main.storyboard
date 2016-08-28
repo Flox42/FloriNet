@@ -16,8 +16,14 @@
             <string>NotoSans-Bold</string>
             <string>NotoSans-Bold</string>
             <string>NotoSans-Bold</string>
+            <string>NotoSans-Bold</string>
+            <string>NotoSans-Bold</string>
         </mutableArray>
         <mutableArray key="NotoSans-Regular.ttf">
+            <string>NotoSans</string>
+            <string>NotoSans</string>
+            <string>NotoSans</string>
+            <string>NotoSans</string>
             <string>NotoSans</string>
             <string>NotoSans</string>
             <string>NotoSans</string>
@@ -145,7 +151,7 @@
                                         </constraints>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" name="NotoSans" family="Noto Sans" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xBL-ai-h3t" customClass="MaterialButton" customModule="FloriNet" customModuleProvider="target">
                                         <rect key="frame" x="17" y="171" width="527" height="50"/>
@@ -203,6 +209,7 @@
                         <outlet property="emailField" destination="pGk-CU-ElE" id="hbK-9x-Ngw"/>
                         <outlet property="passwordField" destination="8nY-eB-A46" id="eaT-NT-sDI"/>
                         <segue destination="hTq-f4-8Kd" kind="show" identifier="loggedIn" id="Oou-Ad-ah6"/>
+                        <segue destination="ZxU-GO-V8F" kind="presentation" identifier="signUp" modalPresentationStyle="overCurrentContext" modalTransitionStyle="coverVertical" id="gap-In-Nf5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -287,10 +294,10 @@
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="kpC-9o-9Sb">
                                                             <rect key="frame" x="8" y="8" width="544" height="349"/>
                                                             <subviews>
-                                                                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="beJ-fs-iJ9">
+                                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="beJ-fs-iJ9">
                                                                     <rect key="frame" x="0.0" y="0.0" width="544" height="50"/>
                                                                     <subviews>
-                                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="1000" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" image="Kiwi" translatesAutoresizingMaskIntoConstraints="NO" id="QFZ-lV-Mn9">
+                                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="1000" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" image="Kiwi" translatesAutoresizingMaskIntoConstraints="NO" id="QFZ-lV-Mn9">
                                                                             <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="width" constant="50" id="TRz-jl-jUQ"/>
@@ -303,13 +310,13 @@
                                                                             </variation>
                                                                         </imageView>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.59999999999999998" translatesAutoresizingMaskIntoConstraints="NO" id="kle-fh-v0Z">
-                                                                            <rect key="frame" x="50" y="0.0" width="394" height="50"/>
+                                                                            <rect key="frame" x="60" y="0.0" width="364" height="50"/>
                                                                             <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="17"/>
                                                                             <color key="textColor" red="0.52941176469999995" green="0.76470588240000004" blue="0.12549019610000001" alpha="1" colorSpace="calibratedRGB"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heart-empty" translatesAutoresizingMaskIntoConstraints="NO" id="6gj-yy-Oc0">
-                                                                            <rect key="frame" x="444" y="0.0" width="50" height="50"/>
+                                                                            <rect key="frame" x="434" y="0.0" width="50" height="50"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="width" constant="50" id="MGE-WK-VJo"/>
                                                                                 <constraint firstAttribute="height" constant="50" id="Nba-68-yVm"/>
@@ -597,6 +604,142 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bPL-QC-wtC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1111" y="354"/>
+        </scene>
+        <!--Sign UpVC-->
+        <scene sceneID="2XX-op-Yy9">
+            <objects>
+                <viewController id="ZxU-GO-V8F" customClass="SignUpVC" customModule="FloriNet" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ULY-J8-1iq"/>
+                        <viewControllerLayoutGuide type="bottom" id="Ngw-kL-5l8"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="QNz-iv-rTb">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yg2-B4-Vh5" customClass="MaterialView" customModule="FloriNet" customModuleProvider="target">
+                                <rect key="frame" x="20" y="40" width="560" height="540"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to FloriNet!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vzm-hZ-2dz">
+                                        <rect key="frame" x="8" y="8" width="544" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="iuf-3X-21F"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="NotoSans" family="Noto Sans" pointSize="20"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VBd-Ub-M71" customClass="MaterialButton" customModule="FloriNet" customModuleProvider="target">
+                                        <rect key="frame" x="8" y="482" width="544" height="50"/>
+                                        <color key="backgroundColor" red="0.52941176470588236" green="0.76470588235294112" blue="0.12549019607843137" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="1ao-kC-4oX"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="15"/>
+                                        <state key="normal" title="SIGN UP">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="signupBtnPressed:" destination="ZxU-GO-V8F" eventType="touchUpInside" id="HIP-eR-vxV"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L2A-to-mA7" customClass="MaterialButton" customModule="FloriNet" customModuleProvider="target">
+                                        <rect key="frame" x="8" y="8" width="30" height="30"/>
+                                        <color key="backgroundColor" red="0.87843137250000003" green="0.87843137250000003" blue="0.87843137250000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="30" id="CeD-tq-6Gw"/>
+                                            <constraint firstAttribute="height" constant="30" id="XDO-tF-WHx"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="30"/>
+                                        <state key="normal" title="X">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="closeBtnPressed:" destination="ZxU-GO-V8F" eventType="touchUpInside" id="Iss-iD-x9d"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Account setup" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lq9-Vt-LTx">
+                                        <rect key="frame" x="8" y="46" width="544" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="aqe-Md-EgK"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="20"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Choose a username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="d4p-C9-LZP" customClass="MaterialTextField" customModule="FloriNet" customModuleProvider="target">
+                                        <rect key="frame" x="8" y="116" width="544" height="35"/>
+                                        <color key="backgroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="ybY-S1-una"/>
+                                        </constraints>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="NotoSans" family="Noto Sans" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JZt-1R-y9A" customClass="MaterialTextField" customModule="FloriNet" customModuleProvider="target">
+                                        <rect key="frame" x="8" y="159" width="544" height="35"/>
+                                        <color key="backgroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="04u-fU-TaE"/>
+                                        </constraints>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="NotoSans" family="Noto Sans" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Verify password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DQN-cA-6dg" customClass="MaterialTextField" customModule="FloriNet" customModuleProvider="target">
+                                        <rect key="frame" x="8" y="202" width="544" height="35"/>
+                                        <color key="backgroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="DhM-Sx-7L9"/>
+                                        </constraints>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="NotoSans" family="Noto Sans" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES"/>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="vzm-hZ-2dz" firstAttribute="top" secondItem="yg2-B4-Vh5" secondAttribute="top" constant="8" id="1JX-X3-Fv8"/>
+                                    <constraint firstItem="d4p-C9-LZP" firstAttribute="leading" secondItem="yg2-B4-Vh5" secondAttribute="leading" constant="8" id="5qi-4z-3is"/>
+                                    <constraint firstAttribute="trailing" secondItem="d4p-C9-LZP" secondAttribute="trailing" constant="8" id="AfL-sD-xL9"/>
+                                    <constraint firstItem="DQN-cA-6dg" firstAttribute="leading" secondItem="yg2-B4-Vh5" secondAttribute="leading" constant="8" id="CBe-GN-21g"/>
+                                    <constraint firstAttribute="trailing" secondItem="DQN-cA-6dg" secondAttribute="trailing" constant="8" id="CEa-K9-W5O"/>
+                                    <constraint firstItem="JZt-1R-y9A" firstAttribute="top" secondItem="d4p-C9-LZP" secondAttribute="bottom" constant="8" id="Ebu-W6-UUi"/>
+                                    <constraint firstAttribute="trailing" secondItem="VBd-Ub-M71" secondAttribute="trailing" constant="8" id="FXD-7e-0vr"/>
+                                    <constraint firstItem="VBd-Ub-M71" firstAttribute="leading" secondItem="yg2-B4-Vh5" secondAttribute="leading" constant="8" id="FsS-zc-TGp"/>
+                                    <constraint firstItem="L2A-to-mA7" firstAttribute="top" secondItem="yg2-B4-Vh5" secondAttribute="topMargin" id="JKj-KP-rNI"/>
+                                    <constraint firstAttribute="trailing" secondItem="Lq9-Vt-LTx" secondAttribute="trailing" constant="8" id="Jdx-UR-Tvh"/>
+                                    <constraint firstItem="vzm-hZ-2dz" firstAttribute="leading" secondItem="yg2-B4-Vh5" secondAttribute="leading" constant="8" id="XM9-3B-LTG"/>
+                                    <constraint firstAttribute="trailing" secondItem="vzm-hZ-2dz" secondAttribute="trailing" constant="8" id="Xkl-Ef-Gs5"/>
+                                    <constraint firstAttribute="bottom" secondItem="VBd-Ub-M71" secondAttribute="bottom" constant="8" id="Ya4-w0-wba"/>
+                                    <constraint firstItem="Lq9-Vt-LTx" firstAttribute="top" secondItem="L2A-to-mA7" secondAttribute="bottom" constant="8" id="Ydr-0I-fk2"/>
+                                    <constraint firstItem="DQN-cA-6dg" firstAttribute="top" secondItem="JZt-1R-y9A" secondAttribute="bottom" constant="8" id="b1f-UR-1BX"/>
+                                    <constraint firstItem="d4p-C9-LZP" firstAttribute="top" secondItem="Lq9-Vt-LTx" secondAttribute="bottom" constant="40" id="rwa-1e-Y5D"/>
+                                    <constraint firstItem="L2A-to-mA7" firstAttribute="leading" secondItem="yg2-B4-Vh5" secondAttribute="leadingMargin" id="wcT-Sm-UpA"/>
+                                    <constraint firstAttribute="trailing" secondItem="JZt-1R-y9A" secondAttribute="trailing" constant="8" id="xa3-vp-lWm"/>
+                                    <constraint firstItem="Lq9-Vt-LTx" firstAttribute="leading" secondItem="yg2-B4-Vh5" secondAttribute="leading" constant="8" id="zMU-vz-Cbt"/>
+                                    <constraint firstItem="JZt-1R-y9A" firstAttribute="leading" secondItem="yg2-B4-Vh5" secondAttribute="leading" constant="8" id="ztZ-UJ-mAF"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="yg2-B4-Vh5" firstAttribute="top" secondItem="ULY-J8-1iq" secondAttribute="bottom" constant="20" id="9QM-AL-2UL"/>
+                            <constraint firstItem="Ngw-kL-5l8" firstAttribute="top" secondItem="yg2-B4-Vh5" secondAttribute="bottom" constant="20" id="DWI-w9-DMT"/>
+                            <constraint firstItem="yg2-B4-Vh5" firstAttribute="trailing" secondItem="QNz-iv-rTb" secondAttribute="trailingMargin" id="d47-2k-Bgj"/>
+                            <constraint firstItem="yg2-B4-Vh5" firstAttribute="leading" secondItem="QNz-iv-rTb" secondAttribute="leadingMargin" id="dZw-rr-BYa"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="passwordTxtField" destination="JZt-1R-y9A" id="Do5-Ix-NoB"/>
+                        <outlet property="usernameTxtField" destination="d4p-C9-LZP" id="186-B6-ON3"/>
+                        <outlet property="verifyPwdTxtField" destination="DQN-cA-6dg" id="yIO-LZ-rjH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="M76-yV-JdH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1111" y="-311"/>
         </scene>
     </scenes>
     <resources>
