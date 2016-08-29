@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class SignUpVC: UIViewController {
+class SignUpVC: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var usernameTxtField: MaterialTextField!
     @IBOutlet weak var passwordTxtField: MaterialTextField!
@@ -29,6 +29,10 @@ class SignUpVC: UIViewController {
         } else if accountDict["provider"] == "password" {
             passwordTxtField.text = accountDict["password"]
         }
+        
+        usernameTxtField.delegate = self
+        passwordTxtField.delegate = self
+        verifyPwdTxtField.delegate = self
     }
 
     func showErrorAlert(title: String, msg: String) {
@@ -36,6 +40,16 @@ class SignUpVC: UIViewController {
         let action = UIAlertAction(title: "OK", style: .Default, handler: nil)
         alert.addAction(action)
         presentViewController(alert, animated: true, completion: nil)
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        if textField == self.usernameTxtField {
+            self.passwordTxtField.becomeFirstResponder()
+        } else if textField == self.passwordTxtField {
+            self.verifyPwdTxtField.becomeFirstResponder()
+        }
+        return true
     }
 
     @IBAction func signupBtnPressed(sender: AnyObject) {

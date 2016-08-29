@@ -57,9 +57,9 @@ class PostCell: UITableViewCell {
                     self.userImgRequest = Alamofire.request(.GET, post.postUserImgUrl!).validate(contentType: ["image/*"]).response(completionHandler: { request, response, data, err in
                         
                         if err == nil {
-                            let img = UIImage(data: data!)!
-                            self.profileImg.image = img
-                            FeedVC.imgCache.setObject(img, forKey: self.post.postUserImgUrl!)
+                            let cellImg = UIImage(data: data!)!
+                            self.profileImg.image = cellImg
+                            FeedVC.imgCache.setObject(cellImg, forKey: self.post.postUserImgUrl!)
                         }
                     })
                 }
@@ -81,9 +81,9 @@ class PostCell: UITableViewCell {
                 request = Alamofire.request(.GET, post.postImgUrl!).validate(contentType: ["image/*"]).response(completionHandler: { request, response, data, err in
                     
                     if err == nil {
-                        let img = UIImage(data: data!)!
-                        self.showcaseImg.image = img
-                        FeedVC.imgCache.setObject(img, forKey: self.post.postImgUrl!)
+                        let cellImg = UIImage(data: data!)!
+                        self.showcaseImg.image = cellImg
+                        FeedVC.imgCache.setObject(cellImg, forKey: self.post.postImgUrl!)
                     }
                 })
             }

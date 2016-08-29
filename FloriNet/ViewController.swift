@@ -11,7 +11,7 @@ import FBSDKCoreKit
 import FBSDKLoginKit
 import Firebase
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
@@ -19,6 +19,9 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        emailField.delegate = self
+        passwordField.delegate = self
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -44,6 +47,15 @@ class ViewController: UIViewController {
         alert.addAction(action)
         presentViewController(alert, animated: true, completion: nil)
     }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        if textField == self.emailField {
+            self.passwordField.becomeFirstResponder()
+        }
+        return true
+    }
+    
 
     @IBAction func fbBtnPressed(sender: UIButton!) {
         let fbLogin = FBSDKLoginManager()

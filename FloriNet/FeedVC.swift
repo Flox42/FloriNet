@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 import Alamofire
 
-class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var postField: MaterialTextField!
@@ -31,6 +31,8 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
         
         imgPicker = UIImagePickerController()
         imgPicker.delegate = self
+        
+        postField.delegate = self
         
         FIRAuth.auth()?.addAuthStateDidChangeListener({ (auth, user) in
             if user != nil {
@@ -63,6 +65,7 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
                     }
                 }
             }
+            self.posts = self.posts.reverse()
             
             self.tableView.reloadData()
         })
@@ -123,7 +126,8 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
         var post: Dictionary<String, AnyObject> = [
             "description": postField.text!,
             "likes": 0,
-            "userKey": DataService.ds.userID!
+            "userKey": DataService.ds.userID!,
+            "timestamp": "\(NSDate().timeIntervalSince1970 * 1000)"
         ]
         
         if imgUrl != nil {
@@ -138,6 +142,11 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
         isImgSelected = false
         
         tableView.reloadData()
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
     
     
